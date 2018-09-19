@@ -1,0 +1,44 @@
+Psychic Game:
+
+1. Display static text (Guess What Letter I'm Thinking Of..., etc.) with the initial variable values (
+"0" for 'Wins' and 'Losses' and "9" for 'Guesses Left').
+2. Create global variables (randLetter, guess, wins, losses, guess#, guesses[]).
+3. Create onkeyup event statement that generates and stores a random letter and compares it to the variable
+value which was just entered from the keyboard.
+4. Create if statements for the possible outcomes listed below.
+
+
+How the game works:
+
+Press a key on the keyboard to begin, the 'Wins' and 'Losses' rows will initially display "0" and the
+'Guesses Left' row will display "9".  Once the key on the keyboard has been depressed, the computer will
+generate a random letter and store it in memory, the 'Guesses Left' row will decrease from 9 to 8 and the
+letter you pressed will display in the 'Your Guesses So Far' row.  During this event, the value stored in
+the "guesses" array variable will be compared with the value stored in the "randLetter" variable to 
+determine a win, loss or continuation of game.  An 'if...' statement will be used to compare the variables
+and do the following depending on the result:
+
+Possible outcomes:
+
+Successful guess (trigger the reset.css file?):
+-Increase the value stored in the "wins" variable by one and display the value in the 'Wins' row.
+-Reset the value stored in the "guessNum" variable back to "9" and display the value in the 'Guesses Left'
+row.
+-Clear the value(s) stored in the "guesses" array variable used to display the 'Your Guesses So Far' row.
+
+Unsuccessful guess:
+-Decrease the value stored in the "guessNum" variable by one and display the value in the 'Guesses Left' row.
+-Store the letter value you guessed in the "guesses" array variable and display the value in the 'Your
+Guesses So Far' row.
+
+Final guess:
+-Increase the value stored in the "losses" variable by one and display the value in the 'Losses' row.
+-Reset the value stored in the "guess#" variable back to "9" and display the value in the 'Guesses Left'
+row.
+-Clear the values stored in the "guesses" array variable used to display the 'Your Guesses So Far' row.
+
+Type a letter, which triggers the 'keyup' event listener and runs a function that generates a random letter.
+Once the letter is stored in memory, it should be ran through the conditional 'if...' statements to deter-
+mine what to do (see outcomes above).
+
+Once complete create input control measures (if you type a number)
