@@ -1,7 +1,7 @@
     var wins = 0;   //Declare wins variable
     var losses = 0;     //Declare losses variable
     var guessNum = 9;   //Declare guess counter variable
-    var arrayGuesses = new Array(9);    //Declare running guess total
+    var arrayGuesses = [];    //Declare running guess total
     var i = 0;  //Delcare counter variable
     var randLetter;     //Declare random letter variable
 
@@ -12,7 +12,8 @@
         document.onkeyup = function(event) {    //Event listener
 
             if (guessNum > 0) {   //Store letters entered, in array enough times to fill (9)
-            arrayGuesses[arrayGuesses.length - guessNum] = event.key.toLowerCase();     
+             arrayGuesses.push(event.key.toLowerCase());
+             console.log(arrayGuesses[i]);
 
             if (guessNum === 9) {
                 function getRandomUppercaseChar() {
@@ -29,8 +30,9 @@
                 document.getElementById("wins").innerHTML = wins;
                 guessNum = 9;
                 document.getElementById("guessNum").innerHTML = guessNum;
-                arrayGuesses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+                arrayGuesses = [];
                 document.getElementById("guesses").innerHTML = arrayGuesses;
+                i = 0;
             }             
             
             else if (arrayGuesses[i] != randLetter) {     //Check for unsuccessful guess outcome
@@ -40,7 +42,7 @@
                     document.getElementById("losses").innerHTML = losses;
                     guessNum = 9;
                     document.getElementById("guessNum").innerHTML = guessNum;
-                    arrayGuesses = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+                    arrayGuesses = [];
                     document.getElementById("guesses").innerHTML = arrayGuesses;
                     i = 0;
                 } else {
